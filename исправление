@@ -1,0 +1,18 @@
+import os
+import time
+
+path = 'C:\\windows\\help'
+
+for dirpath, dirnames, filenames in os.walk(path):    # обход каталога
+    print('*' * 27)
+    print(dirpath, dirnames, filenames)
+    print(os.path.dirname(dirpath))          # получение родительской диоектории файла
+    file_sise = os.path.getsize('out.txt')  # размер файла
+    print(file_sise)
+
+    for file in filenames:
+        full_name_path = os.path.join(dirpath, file)
+        full_name_path = os.path.getsize(dirpath)
+        full_name_path = dirpath + '\\' + file
+        print(os.path.getmtime(full_name_path))    #отображение времени последнего изменения фапйла
+
